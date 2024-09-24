@@ -12,7 +12,7 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public int getForce() {
 		return force;
 	}
@@ -33,8 +33,6 @@ public class Romain {
 			parler("J'abandonne");
 		}
 	}
-	
-	
 
 	@Override
 	public String toString() {
