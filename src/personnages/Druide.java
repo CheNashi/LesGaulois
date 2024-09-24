@@ -41,13 +41,13 @@ public class Druide {
 		}
 	}
 
-	public void booster(Gaulois gaulois) {
-		if (gaulois = "obelix") {
-			System.out.println(" Non, Obélix !... Tu n'auras pas de potion magique ");
-		} else {
-			gaulois.boirePotion(10);
-		}
-	}
+//	public void booster(Gaulois gaulois) {
+//		if (gaulois = "obelix") {
+//			System.out.println(" Non, Obélix !... Tu n'auras pas de potion magique ");
+//		} else {
+//			gaulois.boirePotion(10);
+//		}
+//	}
 
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix", 5, 10);
