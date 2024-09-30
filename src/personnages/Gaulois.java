@@ -33,6 +33,10 @@ public class Gaulois {
 	public int getEffetPotion() {
 		return effetPotion;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
 
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
@@ -50,9 +54,7 @@ public class Gaulois {
 		return force;
 	}
 	
-	public String getNom() {
-		return nom;
-	}
+
 
 	@Override
 	public String toString() {

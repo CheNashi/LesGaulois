@@ -12,8 +12,8 @@ public class scenario {
 		Gaulois obelix = new Gaulois("Obélix", 25, 1,0);
 		Romain minus = new Romain("Minus", 6);
 		panoramix.parler("Je vais aller préparer une petite potion...");
-		obelix.boirePotion(10);
-		obelix.parler("Par Bélénos, ce n'est pas juste !");
+		panoramix.booster(obelix);
+		panoramix.booster(asterix);
 		panoramix.preparerPotion(10);
 		minus.parler(" UN GAU... UN GAUGAU");
 		while (minus.getForce() > 1) {
