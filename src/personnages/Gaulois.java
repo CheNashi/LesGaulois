@@ -4,11 +4,13 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	private int id=0;
 
-	public Gaulois(String nom, int force, int effetPotion) {
+	public Gaulois(String nom, int force, int effetPotion, int id) {
 		this.nom = nom;
 		this.force = force;
 		this.effetPotion = effetPotion;
+		this.id = id;
 	}
 
 	public void parler(String texte) {
@@ -18,6 +20,14 @@ public class Gaulois {
 
 	public int getForce() {
 		return force;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getEffetPotion() {
@@ -46,11 +56,11 @@ public class Gaulois {
 
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + ", Id="+ id + "]";
 	}
 
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix", 8, 1);
+		Gaulois asterix = new Gaulois("Asterix", 8, 1,0);
 		Romain minus = new Romain("Minus",6);
 		System.out.println(asterix);
 		System.out.println(asterix.prendreParole());
