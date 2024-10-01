@@ -3,10 +3,12 @@ package personnages;
 import java.util.*;
 
 public class Druide {
+	private static final int FORCE_MOYENNE = 7;
 	private String nom;
 	private int effetPotionMin;
 	private int effetPotionMax;
 	private int forcePotion = 1;
+	Random random = new Random();
 
 	public Druide(String nom, int effetPotionMin, int effetPotionMax) {
 		this.nom = nom;
@@ -27,38 +29,29 @@ public class Druide {
 	public String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
-	
+
 	public int getForcePotion() {
 		return forcePotion;
 	}
 
-	public int preparerPotion(int effetPotionMax) {
-		Random random = new Random();
-		effetPotionMax = random.nextInt(15);
-		if (effetPotionMax > 7) {
-			System.out.println("J'ai prÃ©parÃ© une super potion de force :" + effetPotionMax);
-			return effetPotionMax;
+	public void preparerPotion() {
+		forcePotion=random.nextInt(effetPotionMax);
+		if (forcePotion > FORCE_MOYENNE) {
+			System.out.println("J'ai préparé une super potion de force :" + forcePotion);
 		} else {
-			System.out.println(
-					"Je n'ai pas trouvÃ© tous les ingrÃ©dients, ma potion est seulement de force :" + effetPotionMax);
-			return effetPotionMax;
+			System.out.println("Je n'ai pas trouvé tous les ingrÃ©dients, ma potion est seulement de force :" + forcePotion);
 		}
 	}
 
 	public void booster(Gaulois gaulois) {
-		if (gaulois.getNom().equals("obelix")) {
-			System.out.println(" Non, ObÃ©lix !... Tu n'auras pas de potion magique ");
-			System.out.println("Le gaulois ObÃ©lix : Â« Par BÃ©lÃ©nos, ce n'est pas juste !Â»");
+		if ("Obélix".equals(gaulois.getNom())) {
+			parler("Non, Obélix !... Tu n'auras pas de potion magique ");
+			gaulois.parler(" Par Bélénos, ce n'est pas juste !");
 		} else {
-			gaulois.boirePotion(10);
+			gaulois.boirePotion(forcePotion);
 		}
 	}
-
-	public static void main(String[] args) {
-		Druide panoramix = new Druide("Panoramix", 5, 10);
-		panoramix.preparerPotion(10);
-	}
-
+	
 	public int getEffetPotionMin() {
 		return effetPotionMin;
 	}
@@ -74,4 +67,10 @@ public class Druide {
 	public void setEffetPotionMax(int effetPotionMax) {
 		this.effetPotionMax = effetPotionMax;
 	}
+
+	public static void main(String[] args) {
+		Druide panoramix = new Druide("Panoramix", 5, 10);
+		panoramix.preparerPotion();
+	}
+
 }

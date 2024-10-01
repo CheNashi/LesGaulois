@@ -15,6 +15,7 @@ public class Chef {
 		return nom;
 	}
 
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}

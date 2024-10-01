@@ -42,35 +42,36 @@ public class Village {
 
 	public Gaulois trouverHabitant(int id) {
 		for (int i = 0; i < nbVillageoisMaximum; i++) {
-			if (villageois[i] != null && villageois[i].getId() == id) {
-				System.out.println("Le villageois s'appelle : " + villageois[i].getNom() + " et son ID est : " + i
+			if (villageois[i]!= null && i==id) {
+				System.out.println("Le villageois s'appelle : " + villageois[i].getNom() + " et c'est le num�ro : " + i
 						+ " du village " + "\"" + getNom() + "\"");
 				return villageois[i];
 			}
 		}
-		System.out.println("Le gaulois avec l'ID " + id + " n'est pas dans ce village.");
+		System.out.println("Le gaulois num�ro : " + id + " n'existe pas.");
 		return null;
 	}
 
 	public void afficherVillageois(Village village) {
-		System.out.println("Voici le chef " + chef);
-		for (int i = 0; i < nbVillageoisMaximum; i++) {
+		System.out.println("Voici le chef " + chef.getNom());
+		for (int i = 0; i < village.nbVillageoisMaximum; i++) {
 			if (villageois[i] != null) {
 				System.out.println(villageois[i]);
 			}
 		}
-
 	}
 
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles", 30);
-		Gaulois asterix = new Gaulois("Astérix", 8, 1, 1);
-		village.ajouterHabitant(asterix);
 		Chef abraAbraracourcix = new Chef("Abraracourcix", 6, village);
-		Gaulois gaulois = village.trouverHabitant(1);
-		village.afficherVillageois(village);
-		Gaulois obelix = new Gaulois("Obélix", 25, 1, 2);
+		village.setChef(abraAbraracourcix);
+		Gaulois asterix = new Gaulois("Astérix", 8, 1);
+		village.ajouterHabitant(asterix);
+		village.trouverHabitant(0);
+		Gaulois obelix = new Gaulois("Obélix", 25, 1);
 		village.ajouterHabitant(obelix);
-		village.afficherVillageois(village);		
+		village.trouverHabitant(1);
+		village.trouverHabitant(3);
+		village.afficherVillageois(village);
 	}
 }
