@@ -63,7 +63,7 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8, 1,0);
-		Romain minus = new Romain("Minus",6);
+		Romain minus = new Romain("Minus",6,2);
 		System.out.println(asterix);
 		System.out.println(asterix.prendreParole());
 		asterix.frapper(minus);
